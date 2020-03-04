@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'main_site/main.css' %}">
+    {%if title %}
+        <title>Game Name - {{title}}</title>
+    {% else %}
+        <title>Game Name</title>
+    {% endif %}
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top navbar-custom">
+          <div class="container">
+            <!-- <img src="media/logo.png" width="40" height="40" class="d-inline-block align-top" alt=""> -->
+            <a class="navbar-brand mr-4" href="{% url 'site-home' %}">Game Name</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggle">
+              <div class="navbar-nav mr-auto">
+                <a class="nav-item nav-link" href="{% url 'site-home' %}">Home</a>
+                <a class="nav-item nav-link" href="{% url 'site-about' %}">About</a>
+                <a class="nav-item nav-link" href="{% url 'site-blog' %}">Blog</a>
+              </div>
+              <!-- Navbar Right Side -->
+              <div class="navbar-nav">
+                {% if user.is_authenticated %}
+                <a class="nav-item nav-link nav-post ml-2" href="{% url 'site-announcements-create' %}">New Announcement</a>
+                <a class="nav-item nav-link nav-post ml-2" href="{% url 'site-post-create' %}">New Post</a>
+                  <a class="nav-item nav-link nav-box" href="{% url 'profile' %}">Profile</a>
+                  <a class="nav-item nav-link nav-box" href="{% url 'logout' %}">Logout</a>
+                {% else %}
+                  <a class="nav-item nav-link nav-box" href="{% url 'login' %}">Login</a>
+                  <a class="nav-item nav-link nav-box" href="{% url 'register' %}">Register</a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main role="main" class="container">
+        <div class="row">
+          <div class="col-md-8">
+            {% if messages %}
+              {% for message in messages%}
+                <div class="alert alert-{{ message.tags }}">
+                  {{message}}
+                </div>
+              {% endfor %}
+            {% endif %}
+            {% block content %}{% endblock %}
+          </div>
+          <div class="col-md-4">
+            <div class="content-section">
+              <h3>Information</h3>
+              <p class='text-muted'>Here you can find some information for our game!
+                <ul class="list-group">
+                  <a class="sidebar" href="{% url 'site-faq' %}"><li class="list-group-item list-group-item-light">FAQ</li></a>
+                  <a class="sidebar" href="{% url 'site-release' %}"><li class="list-group-item list-group-item-light">Release Notes</li></a>
+                  <!--<a class="sidebar" href="{% url 'site-calendar' %}"><li class="list-group-item list-group-item-light">Calendar</li></a> -->
+                  <a class="sidebar" href="{% url 'site-media' %}"><li class="list-group-item list-group-item-light">Media</li></a>
+                  <a class="sidebar" href="">
+                      <li class="list-group-item list-group-item-light">
+                        <div class="dropdown">
+                          <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Private Dev
+                          </a>
+
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="https://calendar.google.com/calendar/embed?src=71f4096s3otp9cu85n27pabmko%40group.calendar.google.com&ctz=America%2FToronto">Calendar</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="https://drive.google.com/drive/folders/1dliodegB_sS7MJaVPy2Np9WvNzhLSjd9?usp=sharing">Drive</a>
+                          </div>
+                        </div>
+                      </li>
+                  </a>
+                </ul>
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

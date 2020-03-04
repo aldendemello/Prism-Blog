@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Domine&display=swap');
+body {
+    background: #fafafa;
+    color: #333333;
+    margin-top: 5rem;
+  }
+
+  h1, h2, h3, h4, h5, h6, a {
+    color: black;
+    font-family: 'Roboto';
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  .navbar {
+    min-height: 60px;
+  }
+
+  .bg-steel {
+    background-color: rgb(37, 37, 37);
+  }
+
+  .site-header .navbar-nav .nav-link {
+    color: white;
+    font-family: 'Roboto' ;
+  }
+
+  .site-header .navbar-nav .nav-link:hover {
+    color: rgb(158, 157, 157);
+    font-family: 'Roboto' ;
+  }
+
+
+
+  .site-header .navbar-nav .nav-box {
+    color: rgb(158, 157, 157);
+  }
+
+  .site-header .navbar-nav .nav-box:hover {
+    color: #fafafa;
+  }
+
+  .site-header .navbar-nav .nav-link.active {
+    font-weight: 500;
+  }
+
+  .content-section {
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-bottom: 20px;
+  }
+
+  .article-title {
+    color: rgb(37, 37, 37);
+    font-family: 'Domine';
+    font-weight: bold;
+  }
+
+  a.article-title:hover {
+    color: #428bca;
+    text-decoration: none;
+  }
+
+  a.article-title-announce:hover {
+    text-decoration: none;
+  }
+
+  .article-content {
+    white-space: pre-line;
+    font-family: 'Roboto';
+  }
+
+  .article-img {
+    height: 65px;
+    width: 65px;
+    margin-right: 16px;
+  }
+
+  .article-metadata {
+    padding-bottom: 1px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #e3e3e3
+  }
+
+  .article-metadata a:hover {
+    color: #333;
+    text-decoration: none;
+  }
+
+  .article-svg {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+  }
+
+  .account-img {
+    height: 125px;
+    width: 125px;
+    margin-right: 20px;
+    margin-bottom: 16px;
+  }
+
+  .account-heading {
+    font-size: 2.5rem;
+  }
+
+  h2.account-username {
+    font-size: 100px;
+  }
+
+a.sidebar:hover, .list-group-item:hover{
+  color: white;
+  background-color: rgb(37, 37, 37);
+  text-decoration: none;
+}
+
+.btn-info {
+  background-color: rgb(37, 37, 37);
+  color: #fafafa;
+  border-color: rgb(37, 37, 37);
+}
+
+.btn-info:hover {
+  background-color: #fafafa;
+  color: rgb(37, 37, 37);
+  border-color: rgb(37, 37, 37);
+}
+
+.btn-outline-info {
+  border-color: rgb(37, 37, 37);
+  color: rgb(37, 37, 37);
+}
+
+.btn-outline-info:hover {
+  background-color: rgb(37, 37, 37);
+  color: #fafafa;
+  border-color: rgb(37, 37, 37);
+}
+
+.navbar-nav .nav-post {
+  border: 1px solid #fafafa;
+  color: #fafafa;
+}
+
+.navbar-nav .nav-post:hover {
+  color: rgb(37, 37, 37);
+  background-color:#fafafa;
+}
+
+.dropdown .btn-dark {
+  background-color: white;
+  color: rgb(37, 37, 37);
+
+}
+
+.dropdown-divider {
+    background-color: rgb(37, 37, 37);
+}
+
